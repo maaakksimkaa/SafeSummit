@@ -23,6 +23,6 @@ public class OpenApiConfig {
 						.description("Сайт для организации походов с оповещениями безопасности")
 						.title("Safe Summit")
 						.version("0.1 alfa")
-						.contact(new Contact().name("Башта Евгений, Китабов Денис, Данилов Максим")));
+						.contact(new Contact().name("Данилов Максим")));
 	}
 }
