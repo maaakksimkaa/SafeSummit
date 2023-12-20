@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roles</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <h1>Доступные роли</h1>
+
+    <div class="row">
+        <div class="col">
+            <a
+                    href="roles/add"
+                    class="btn btn-secondary"
+                    role="button"
+                    style="float: right"
+                    aria-disabled="true">Добавить роль</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="role : ${roles}">
+            <td th:text="${role.title}"></td>
+            <td th:text="${role.description}"></td>
+            <td>
+                <a style="float: right" class="btn btn-danger ms-1" th:href="'/roles/delete/' + ${role.id}">Удалить</a>
+                <a style="float: right" class="btn btn-warning" th:href="'/roles/update/' + ${role.id}">Обновить</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

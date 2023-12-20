@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить чек-поинт</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Добавить чек-поинт</h1>
+
+    <form method="POST" th:action="@{/checkpoints/add}" th:object="${checkpointForm}">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="title" type="text" class="form-control" id="title">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input name="description" type="text" class="form-control" id="description">
+        </div>
+
+        <div class="mb-3">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input name="latitude" type="number" class="form-control" id="latitude">
+        </div>
+
+        <div class="mb-3">
+            <label for="longitude" class="form-label">Longitude</label>
+            <input name="longitude" type="number" class="form-control" id="longitude">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

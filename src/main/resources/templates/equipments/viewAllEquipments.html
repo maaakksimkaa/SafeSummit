@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список снаряжения</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <h1>Список снаряжения</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start date</th>
+            <th>End date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tour : ${tours}">
+            <td th:text="${tour.title}"></td>
+            <td th:text="${tour.description}"></td>
+            <td th:text="${#temporals.format(tour.start_date, 'yyyy-MM-dd HH:mm:ss.SSSSS')}"></td>
+            <td th:text="${#temporals.format(tour.end_date, 'yyyy-MM-dd HH:mm:ss.SSSSS')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+

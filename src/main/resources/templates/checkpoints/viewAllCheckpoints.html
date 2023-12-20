@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список чек-поинтов</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <h1>Список чек-поинтов</h1>
+
+    <div class="row">
+        <div class="col">
+            <a
+                    href="checkpoints/add"
+                    class="btn btn-secondary"
+                    role="button"
+                    style="float: right"
+                    aria-disabled="true">Добавить чек-поинт</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="checkpoint : ${checkpoints}">
+            <td th:text="${checkpoint.title}"></td>
+            <td th:text="${checkpoint.description}"></td>
+            <td th:text="${checkpoint.latitude}"></td>
+            <td th:text="${checkpoint.longitude}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
